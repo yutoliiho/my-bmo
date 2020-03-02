@@ -24,11 +24,19 @@ app.use(express.static(publicDirectoryPath))
 
 // setup app
 app.get('/', (req, res)=>{
-    res.render('index'), {
-        title: 'Home Page', 
-        name: 'bmo'
-    }
+    res.render('index', {
+        title: 'home',
+        name: 'tmo'
+    })
 })
+
+app.get('/about', (req, res)=>{
+    res.render('about', {
+        title: 'about',
+        name: 'us'
+    })
+})
+
 
 app.get('/weather', (req, res) => {
     if (!req.query.address) {
